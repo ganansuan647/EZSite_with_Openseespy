@@ -1,0 +1,2 @@
+# EZSite_with_Openseespy
+在openseespy快速建立二维场地，简化场地-结构一体化有限元模型的建模步骤
