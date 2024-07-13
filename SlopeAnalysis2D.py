@@ -615,7 +615,7 @@ class SlopeAnalysis2D(EZOpsMaterial):
         x,y = left_corner_node.x, left_corner_node.y
         
         # create LK dashpot nodes
-        newtag = max(self.opsNodes) + 1
+        newtag = max(node.tag for node in self.Nodes_ALL) + 1
 
         # define fixities for dashpot nodes
         DashPotNode = namedtuple('DashPotNode', ['tag', 'x', 'y', 'FixedDOF', 'EqDOF'])
@@ -624,8 +624,8 @@ class SlopeAnalysis2D(EZOpsMaterial):
 
         # define dashpot material parameters
         # dashpotcoef = rou*vs, rou is the density(ton/m^3) of the soil below the site, vs is the shear wave velocity(m/s)
-        rou = 2.03
-        vs = 300.0
+        rou = 2.00
+        vs = 875.0
         dashpotcoef = rou*vs
         
         # baseArea = sum of the area of the soil length*soil thickness
@@ -1088,7 +1088,8 @@ if __name__ == "__main__":
     #                 show_constrain_dof=False,
     #                 label_size=8,
     #                 show_outline=True,
-    #                 opacity=1.0)
+    #                 opacity=1.0,
+    #                 save_html="ModelVis.html")
     #     fig.show()
     
     logger.info('Start Dynamic Analysis...')
@@ -1148,14 +1149,14 @@ if __name__ == "__main__":
         with alive_bar(nstep,title="NLTHA:",length=30,bar='notes') as bar:
             for seg in segs:
                 ok = analysis.TransientAnalyze(dt)
-                # save response data per 50 steps
-                if seg%50==0 and not Slope2D.Parallel:
+                # save response data per 100 steps
+                if seg%100==0 and not Slope2D.Parallel:
                     ModelData.get_resp_step()
                 bar()
     else:
         for seg in segs:
             ok = analysis.TransientAnalyze(dt)
-            if seg%50==0:
+            if seg%100==0:
                     ModelData.get_resp_step()
     
     # save response data and plot if you like
@@ -1171,13 +1172,14 @@ if __name__ == "__main__":
                                 show_face_line=False, opacity=1,
                                 model_update=False,
                                 save_html="DeformVis.html")
-        fig = opsvis.react_vis(input_file="RespStepData-Dynamic.hdf5",
-                                slider=True,
-                                direction="Fy",
-                                show_values = True,
-                                show_outline = False,
-                                save_html = "ReactVis.html")
         fig.show()
+        # fig = opsvis.react_vis(input_file="RespStepData-Dynamic.hdf5",
+        #                         slider=True,
+        #                         direction="Fy",
+        #                         show_values = True,
+        #                         show_outline = False,
+        #                         save_html = "ReactVis.html")
+        # fig.show()
 
     
     
