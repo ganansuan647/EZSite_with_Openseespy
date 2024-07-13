@@ -6,11 +6,11 @@ The slope is modeled in two-dimensions and it is assumed that the slope is under
 
 ![](https://opensees.berkeley.edu/wiki/images/7/72/2DsoilProfileMap.png)
 
-The Openseespy version of this example can be download here: [SlopeAnalysis2D.py](https://github.com/ganansuan647/EZSite_with_Openseespy/bolb/main/SlopeAnalysis2D.py).
+The Openseespy version of this example can be download here: [SlopeAnalysis2D.py](SlopeAnalysis2D.py).
 The Origional Opensees example .tcl file can be download [here](https://opensees.berkeley.edu/wiki/images/5/54/SlopeAnalysis2Deff.tcl)
 
 With the help of [opstool](https://github.com/yexiang1992/opstool)，the model and it's deformation can be plotted easily
 
 |                            Image 1                            |                            Image 2                            |
 | :-----------------------------------------------------------: | :-----------------------------------------------------------: |
-| ![](https://github.com/ganansuan647/EZSite_with_Openseespy/bolb/main/image/Slope_Model.png)       | ![]([https://s2.loli.net/2023/03/27/r1NaUGuiEcjJMYn.png](https://github.com/ganansuan647/EZSite_with_Openseespy/bolb/main/image/Slope_Deform.png))       |
+| ![](image/Slope_Model.png)                                    | ![](image/Slope_Deform.png)                                   |
