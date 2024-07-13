@@ -11,6 +11,6 @@ The Origional Opensees example .tcl file can be download [here](https://opensees
 
 With the help of [opstool](https://github.com/yexiang1992/opstool)，the model and it's deformation can be plotted easily
 
-|                            Image 1                            |                            Image 2                            |
+|                             Model                             |                          Deformation                          |
 | :-----------------------------------------------------------: | :-----------------------------------------------------------: |
 | ![](image/Slope_Model.png)                                    | ![](image/Slope_Deform.png)                                   |
