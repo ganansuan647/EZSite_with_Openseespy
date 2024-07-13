@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# output of the OpenSeesPy examples
+SlopeAnalysis2Dexample/*.out
+opstool_output/
 # C extensions
 *.so
 
